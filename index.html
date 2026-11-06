@@ -4,317 +4,455 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Protección | Seguros</title>
+<title>Diagnósticos Profesionales</title>
 
 <style>
+:root {
+    --azul: #0b1d3a;
+    --azul-claro: #18365c;
+    --dorado: #d6ad4d;
+    --fondo: #f4f6f9;
+    --texto: #26364b;
+    --gris: #758195;
+}
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f3f2ee;
-    color: #202a36;
+    font-family: Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
 }
 
-/* ENCABEZADO */
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVEGACIÓN */
+
 header {
-    background: #101c2c;
-    color: white;
-    padding: 22px 8%;
+    background: white;
+    padding: 18px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px #00000010;
 }
 
 .logo {
-    font-size: 23px;
+    color: var(--azul);
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--dorado);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--dorado);
+}
+
+/* PORTADA */
+
+.hero {
+    background: linear-gradient(120deg, #091a35, #193b65);
+    color: white;
+    padding: 85px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.etiqueta {
+    color: var(--dorado);
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 3px;
 }
 
-.logo span {
-    color: #c7a96b;
-}
-
-header p {
-    color: #c5ced8;
-    font-size: 13px;
-}
-
-/* PORTADA */
-.hero {
-    background: linear-gradient(120deg, #101c2c, #263e59);
-    color: white;
-    padding: 100px 8%;
-}
-
 .hero h1 {
-    font-size: 48px;
-    margin: 15px 0;
+    font-size: 43px;
+    line-height: 1.2;
+    margin: 18px 0;
 }
 
 .hero p {
-    color: #d5dce4;
-    max-width: 600px;
-    line-height: 1.7;
+    color: #d2dbea;
+    margin-bottom: 25px;
 }
 
-.hero small {
-    color: #c7a96b;
-    letter-spacing: 3px;
+.boton {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--azul);
+    border: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
 }
 
-/* CONTENIDO PRINCIPAL */
-main {
+.boton:hover {
+    background: #edcf83;
+    transform: translateY(-2px);
+}
+
+.hero-decoration {
+    width: 320px;
+    height: 230px;
+    border: 1px solid #ffffff40;
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 15px;
+}
+
+.decoration-item {
+    background: #ffffff12;
+    border: 1px solid #ffffff25;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dorado);
+    font-size: 35px;
+}
+
+/* EMPRESAS */
+
+.contenedor {
     max-width: 1150px;
-    margin: -35px auto 60px;
-    padding: 0 20px;
+    margin: auto;
+    padding: 65px 25px;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo h2 {
+    color: var(--azul);
+    font-size: 30px;
+}
+
+.titulo p {
+    color: var(--gris);
+    margin-top: 8px;
+}
+
+.empresas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 13px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 20px #0000000d;
+    transition: .3s;
+    border: 1px solid #e5e9ef;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px #00000015;
+}
+
+.fr naranja {
+    color: orange;
+}
+
+.linea {
+    height: 6px;
+    background: var(--color);
+}
+
+.tarjeta-contenido {
+    padding: 25px 18px;
+}
+
+.icono {
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    background: color-mix(in srgb, var(--color) 12%, white);
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    font-weight: bold;
+    margin: 0 auto 15px;
+}
+
+.tarjeta h3 {
+    color: var(--azul);
+    font-size: 20px;
+}
+
+.categoria {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--color) 12%, white);
+    color: var(--color);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tarjeta p {
+    color: var(--gris);
+    font-size: 13px;
+    min-height: 65px;
+    margin-bottom: 20px;
+}
+
+.boton-secundario {
+    display: block;
+    width: 100%;
+    background: white;
+    border: 1px solid var(--azul);
+    color: var(--azul);
+    padding: 10px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-secundario:hover {
+    background: var(--azul);
+    color: white;
+}
+
+/* SECCIONES DE INFORMACIÓN */
+
+.detalle {
+    display: none;
+    max-width: 1050px;
+    margin: auto;
+    padding: 35px 25px 65px;
+}
+
+.detalle.activo {
+    display: block;
+}
+
+.volver {
+    background: none;
+    border: none;
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.portada-detalle {
+    background: linear-gradient(120deg, var(--azul), var(--color));
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.portada-detalle h1 {
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.portada-detalle p {
+    color: #e0e7f0;
+}
+
+.informacion {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 20px;
 }
 
 .panel {
     background: white;
-    padding: 40px;
+    padding: 28px;
     border-radius: 12px;
-    box-shadow: 0 15px 40px #00000012;
+    border: 1px solid #e5e9ef;
+    box-shadow: 0 5px 20px #00000008;
 }
 
 .panel h2 {
-    color: #101c2c;
-    margin-bottom: 10px;
-}
-
-.panel p {
-    color: #687482;
-    margin-bottom: 25px;
-}
-
-/* BOTONES DE SEGUROS */
-.seguros {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-.seguro-btn {
-    background: #faf9f6;
-    border: 1px solid #e3e0d8;
-    padding: 25px 18px;
-    min-height: 145px;
-    text-align: left;
-    border-radius: 9px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.seguro-btn:hover {
-    background: #f1ebdd;
-    border-color: #c7a96b;
-    transform: translateY(-5px);
-}
-
-.seguro-btn span {
-    display: block;
-    color: #c7a96b;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-.seguro-btn strong {
-    color: #101c2c;
-    font-size: 21px;
-}
-
-.seguro-btn p {
-    font-size: 13px;
-    margin-top: 8px;
-}
-
-/* SECCIONES DE INFORMACION */
-.detalle {
-    display: none;
-    background: white;
-    margin-top: 30px;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px #00000012;
-}
-
-.detalle.active {
-    display: block;
-}
-
-.detalle h2 {
-    color: #101c2c;
-    font-size: 35px;
-    margin: 15px 0;
-}
-
-.detalle > p {
-    color: #687482;
-    line-height: 1.8;
-}
-
-.etiqueta {
-    color: #a88a50;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 12px;
-}
-
-/* TARJETAS */
-.informacion {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin: 30px 0;
-}
-
-.tarjeta {
-    background: #f7f6f2;
-    border-left: 3px solid #c7a96b;
-    padding: 22px;
-}
-
-.tarjeta h3 {
-    color: #101c2c;
-    margin-bottom: 10px;
-}
-
-.tarjeta p {
-    color: #687482;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-/* CONTACTO */
-.contacto {
-    border-top: 1px solid #e3e0d8;
-    padding-top: 25px;
-    margin-top: 20px;
-}
-
-.contacto h3 {
-    color: #101c2c;
+    color: var(--azul);
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
-.contacto p {
-    color: #687482;
-    margin: 8px 0;
+.panel p {
+    color: var(--gris);
+    font-size: 14px;
+    margin-bottom: 15px;
 }
 
-/* BOTONES */
-button {
-    font-family: inherit;
+.panel h3 {
+    color: var(--texto);
+    font-size: 15px;
+    margin: 15px 0 5px;
 }
 
-.acciones {
-    display: flex;
-    gap: 12px;
-    margin-top: 25px;
-    flex-wrap: wrap;
+.panel ul {
+    padding-left: 20px;
+    color: var(--gris);
+    font-size: 13px;
 }
 
-.btn-principal {
-    background: #101c2c;
-    color: white;
-    border: none;
-    padding: 14px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .3s;
+.beneficio {
+    background: #f8f3e7;
+    border-left: 4px solid var(--dorado);
+    padding: 17px;
+    border-radius: 7px;
+    margin-top: 20px;
 }
 
-.btn-principal:hover {
-    background: #263e59;
+.beneficio h3 {
+    margin: 0 0 7px;
 }
 
-.btn-secundario {
-    background: transparent;
-    border: 1px solid #bfc3c8;
-    color: #101c2c;
-    padding: 14px 25px;
-    border-radius: 5px;
-    cursor: pointer;
+.beneficio p {
+    margin: 0;
 }
 
 /* FORMULARIO */
-.formulario {
-    display: none;
-    background: #e9e7e0;
-    padding: 40px;
-    border-radius: 12px;
-    margin-top: 30px;
-}
 
-.formulario.active {
-    display: block;
+.formulario {
+    margin-top: 25px;
 }
 
 .formulario h2 {
-    color: #101c2c;
-    margin-bottom: 10px;
+    font-size: 24px;
 }
 
-.formulario > p {
-    color: #687482;
+.formulario-intro {
+    margin-bottom: 25px;
+    color: var(--gris);
+    font-size: 14px;
 }
 
-form {
+.campos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 25px;
+    gap: 18px;
 }
 
 .campo {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 }
 
-.campo label {
-    font-weight: bold;
-    color: #101c2c;
-}
-
-.campo input,
-.campo select,
-.campo textarea {
-    padding: 13px;
-    border: 1px solid #d4d2cb;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.campo textarea {
-    min-height: 110px;
-    resize: vertical;
-}
-
-.completo {
+.campo.completo {
     grid-column: 1 / -1;
 }
 
-/* PIE DE PAGINA */
-footer {
-    background: #101c2c;
-    color: #c5ced8;
-    text-align: center;
-    padding: 30px;
+.campo label {
     font-size: 13px;
+    font-weight: bold;
+    color: var(--texto);
 }
 
-footer strong {
+.campo input,
+.campo textarea {
+    padding: 13px;
+    border: 1px solid #dce2e9;
+    border-radius: 7px;
+    outline: none;
+    font-size: 13px;
+    background: #fafbfd;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--dorado);
+}
+
+.campo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.privacidad {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 12px;
+    color: var(--gris);
+}
+
+.privacidad input {
+    margin-top: 3px;
+}
+
+.exito {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #e7f5eb;
+    color: #276344;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.exito.mostrar {
+    display: block;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background: var(--azul);
     color: white;
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+}
+
+footer a {
+    color: var(--dorado);
+    text-decoration: none;
 }
 
 /* RESPONSIVE */
-@media(max-width: 800px) {
-    .seguros {
+
+@media(max-width: 900px) {
+    .empresas {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -323,31 +461,46 @@ footer strong {
     }
 }
 
-@media(max-width: 550px) {
-    header p {
-        display: none;
+@media(max-width: 600px) {
+    header {
+        padding: 16px 5%;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 55px 25px;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 33px;
     }
 
-    .seguros {
-        grid-template-columns: 1fr 1fr;
+    .hero-decoration {
+        display: none;
     }
 
-    .panel,
-    .detalle,
-    .formulario {
-        padding: 22px;
-    }
-
-    form {
+    .empresas {
         grid-template-columns: 1fr;
     }
 
-    .completo {
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .campo.completo {
         grid-column: auto;
+    }
+
+    .portada-detalle {
+        padding: 28px;
+    }
+
+    .portada-detalle h1 {
+        font-size: 28px;
     }
 }
 </style>
@@ -355,381 +508,604 @@ footer strong {
 
 <body>
 
-<header>
-    <div class="logo">PROTECCIÓN<span>.</span></div>
-    <p>CONFIANZA Y RESPALDO PARA TI</p>
-</header>
+<!-- NAVEGACIÓN -->
 
-<section class="hero">
-    <small>BIENVENIDO A PROTECCIÓN</small>
-    <h1>Protege lo que<br>más importa.</h1>
-    <p>
-        Conoce nuestras diferentes opciones de seguros.
-        Selecciona una alternativa para consultar sus
-        características y recibir atención personalizada.
-    </p>
-</section>
+<header>
+    <div class="logo">DIAGNÓSTICOS <span>PRO</span></div>
+
+    <nav>
+        <a href="#" onclick="mostrarInicio()">Inicio</a>
+        <a href="#empresas" onclick="mostrarInicio()">Empresas</a>
+        <a href="#privacidad">Privacidad</a>
+    </nav>
+</header>
 
 <main>
 
-<!-- PAGINA PRINCIPAL -->
-<section class="panel" id="inicio">
+<!-- PÁGINA PRINCIPAL -->
 
-    <h2>Selecciona un seguro</h2>
-    <p>Elige una de las siguientes opciones para conocer más información.</p>
+<div id="inicio">
 
-    <div class="seguros">
+    <section class="hero">
+        <div class="hero-content">
+            <div class="etiqueta">DIAGNÓSTICOS EXCLUSIVOS</div>
 
-        <button class="seguro-btn" onclick="mostrarSeguro(1)">
-            <span>OPCIÓN 01</span>
-            <strong>Seguro 1</strong>
-            <p>Conoce esta opción</p>
-        </button>
+            <h1>Cuatro diagnósticos profesionales, uno para ti</h1>
 
-        <button class="seguro-btn" onclick="mostrarSeguro(2)">
-            <span>OPCIÓN 02</span>
-            <strong>Seguro 2</strong>
-            <p>Conoce esta opción</p>
-        </button>
+            <p>
+                Conoce a nuestros socios y solicita el diagnóstico
+                que más te interese. Recibe orientación profesional
+                de acuerdo con tus necesidades.
+            </p>
 
-        <button class="seguro-btn" onclick="mostrarSeguro(3)">
-            <span>OPCIÓN 03</span>
-            <strong>Seguro 3</strong>
-            <p>Conoce esta opción</p>
-        </button>
+            <a href="#empresas" class="boton">Ver empresas</a>
+        </div>
 
-        <button class="seguro-btn" onclick="mostrarSeguro(4)">
-            <span>OPCIÓN 04</span>
-            <strong>Seguro 4</strong>
-            <p>Conoce esta opción</p>
-        </button>
+        <div class="hero-decoration">
+            <div class="decoration-item">✦</div>
+            <div class="decoration-item">◇</div>
+            <div class="decoration-item">◎</div>
+            <div class="decoration-item">✧</div>
+        </div>
+    </section>
+
+    <section class="contenedor" id="empresas">
+
+        <div class="titulo">
+            <h2>Elige una empresa</h2>
+            <p>Selecciona una tarjeta para conocer todos sus detalles.</p>
+        </div>
+
+        <div class="empresas">
+
+            <!-- LUMINA -->
+
+            <article class="tarjeta" style="--color:#c69b36">
+                <div class="linea"></div>
+
+                <div class="tarjeta-contenido">
+                    <div class="icono">L</div>
+
+                    <h3>Lumina</h3>
+
+                    <span class="categoria">
+                        Diagnóstico visual
+                    </span>
+
+                    <p>
+                        Orientación profesional para comprender
+                        mejor tus necesidades visuales.
+                    </p>
+
+                    <button class="boton-secundario"
+                    onclick="mostrarDetalle('lumina')">
+                        Ver diagnóstico →
+                    </button>
+                </div>
+            </article>
+
+            <!-- ALTAMIRA -->
+
+            <article class="tarjeta" style="--color:#4c8b6c">
+                <div class="linea"></div>
+
+                <div class="tarjeta-contenido">
+                    <div class="icono">A</div>
+
+                    <h3>Altamira</h3>
+
+                    <span class="categoria">
+                        Diagnóstico patrimonial
+                    </span>
+
+                    <p>
+                        Revisión inicial para orientar tus
+                        decisiones patrimoniales.
+                    </p>
+
+                    <button class="boton-secundario"
+                    onclick="mostrarDetalle('altamira')">
+                        Ver diagnóstico →
+                    </button>
+                </div>
+            </article>
+
+            <!-- BLUEFIN -->
+
+            <article class="tarjeta" style="--color:#5486ba">
+                <div class="linea"></div>
+
+                <div class="tarjeta-contenido">
+                    <div class="icono">B</div>
+
+                    <h3>Bluefin</h3>
+
+                    <span class="categoria">
+                        Diagnóstico financiero
+                    </span>
+
+                    <p>
+                        Lectura inicial para conocer mejor
+                        tu panorama financiero.
+                    </p>
+
+                    <button class="boton-secundario"
+                    onclick="mostrarDetalle('bluefin')">
+                        Ver diagnóstico →
+                    </button>
+                </div>
+            </article>
+
+            <!-- SABORÉ -->
+
+            <article class="tarjeta" style="--color:#c7655d">
+                <div class="linea"></div>
+
+                <div class="tarjeta-contenido">
+                    <div class="icono">S</div>
+
+                    <h3>Saboré</h3>
+
+                    <span class="categoria">
+                        Diagnóstico nutricional
+                    </span>
+
+                    <p>
+                        Orientación inicial para identificar
+                        hábitos y necesidades nutricionales.
+                    </p>
+
+                    <button class="boton-secundario"
+                    onclick="mostrarDetalle('sabore')">
+                        Ver diagnóstico →
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- SECCIÓN DINÁMICA DE INFORMACIÓN -->
+
+<section id="detalle" class="detalle">
+
+    <button class="volver" onclick="mostrarInicio()">
+        ← Volver a las empresas
+    </button>
+
+    <div class="portada-detalle" id="portadaDetalle">
+
+        <div class="etiqueta" id="categoriaDetalle">
+            DIAGNÓSTICO PROFESIONAL
+        </div>
+
+        <h1 id="nombreDetalle">Empresa</h1>
+
+        <p id="descripcionDetalle"></p>
 
     </div>
-</section>
-
-<!-- SEGURO 1 -->
-<section class="detalle" id="seguro1">
-
-    <span class="etiqueta">OPCIÓN 01</span>
-    <h2>Seguro 1</h2>
-
-    <p>
-        Aquí puedes agregar una descripción completa del Seguro 1.
-        Explica en qué consiste, cuáles son sus características
-        y qué beneficios ofrece a los clientes.
-    </p>
 
     <div class="informacion">
 
-        <div class="tarjeta">
-            <h3>¿Qué ofrece?</h3>
-            <p>Describe las principales coberturas y beneficios del seguro.</p>
+        <div class="panel">
+
+            <h2>Sobre la empresa</h2>
+
+            <p id="sobreEmpresa"></p>
+
+            <h3>Diagnóstico profesional</h3>
+
+            <p id="diagnostico"></p>
+
+            <h3>¿Qué incluye?</h3>
+
+            <p id="incluye"></p>
+
+            <div class="beneficio">
+                <h3>✧ Beneficio incluido</h3>
+                <p id="beneficio"></p>
+            </div>
+
         </div>
 
-        <div class="tarjeta">
-            <h3>¿A quién va dirigido?</h3>
-            <p>Explica qué personas pueden contratar este servicio.</p>
-        </div>
+        <div class="panel">
 
-        <div class="tarjeta">
-            <h3>Información importante</h3>
-            <p>Agrega requisitos, condiciones y características adicionales.</p>
-        </div>
+            <h2>Condiciones y restricciones</h2>
 
-    </div>
+            <ul id="condiciones"></ul>
 
-    <div class="contacto">
-        <h3>¿Necesitas más información?</h3>
-        <p>Correo: contacto@empresa.com</p>
-        <p>Teléfono: (33) 0000 0000</p>
-        <p>Horario: Lunes a viernes de 9:00 a 18:00</p>
-    </div>
+            <h3>Vigencia</h3>
 
-    <div class="acciones">
-        <button class="btn-principal" onclick="abrirFormulario(1)">
-            Llenar un formulario
-        </button>
+            <p>
+                Válido hasta nuevo aviso.
+                Consulta disponibilidad al enviar tu solicitud.
+            </p>
 
-        <button class="btn-secundario" onclick="volver()">
-            Volver
-        </button>
-    </div>
+            <h3>Contacto</h3>
 
-</section>
+            <p>
+                Completa el formulario para que la empresa
+                pueda ponerse en contacto contigo.
+            </p>
 
-<!-- SEGURO 2 -->
-<section class="detalle" id="seguro2">
+            <p>
+                <strong>Correo:</strong> contacto@ejemplo.com
+            </p>
 
-    <span class="etiqueta">OPCIÓN 02</span>
-    <h2>Seguro 2</h2>
+            <p>
+                <strong>Teléfono:</strong> (33) 0000 0000
+            </p>
 
-    <p>
-        Aquí puedes agregar una descripción completa del Seguro 2.
-        Explica en qué consiste, cuáles son sus características
-        y qué beneficios ofrece a los clientes.
-    </p>
-
-    <div class="informacion">
-
-        <div class="tarjeta">
-            <h3>¿Qué ofrece?</h3>
-            <p>Describe las principales coberturas y beneficios del seguro.</p>
-        </div>
-
-        <div class="tarjeta">
-            <h3>¿A quién va dirigido?</h3>
-            <p>Explica qué personas pueden contratar este servicio.</p>
-        </div>
-
-        <div class="tarjeta">
-            <h3>Información importante</h3>
-            <p>Agrega requisitos, condiciones y características adicionales.</p>
         </div>
 
     </div>
 
-    <div class="contacto">
-        <h3>¿Necesitas más información?</h3>
-        <p>Correo: contacto@empresa.com</p>
-        <p>Teléfono: (33) 0000 0000</p>
-        <p>Horario: Lunes a viernes de 9:00 a 18:00</p>
-    </div>
+    <!-- FORMULARIO -->
 
-    <div class="acciones">
-        <button class="btn-principal" onclick="abrirFormulario(2)">
-            Llenar un formulario
-        </button>
+    <div class="panel formulario" id="solicitud">
 
-        <button class="btn-secundario" onclick="volver()">
-            Volver
-        </button>
-    </div>
+        <h2>Solicita tu diagnóstico</h2>
 
-</section>
+        <p class="formulario-intro">
+            Déjanos tus datos y la empresa seleccionada
+            se pondrá en contacto contigo.
+        </p>
 
-<!-- SEGURO 3 -->
-<section class="detalle" id="seguro3">
+        <form id="formulario" onsubmit="enviarFormulario(event)">
 
-    <span class="etiqueta">OPCIÓN 03</span>
-    <h2>Seguro 3</h2>
+            <input type="hidden" id="empresaSeleccionada">
 
-    <p>
-        Aquí puedes agregar una descripción completa del Seguro 3.
-        Explica en qué consiste, cuáles son sus características
-        y qué beneficios ofrece a los clientes.
-    </p>
+            <div class="campos">
 
-    <div class="informacion">
+                <div class="campo">
+                    <label>Nombre completo *</label>
 
-        <div class="tarjeta">
-            <h3>¿Qué ofrece?</h3>
-            <p>Describe las principales coberturas y beneficios del seguro.</p>
-        </div>
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej. María López Hernández"
+                        required
+                    >
+                </div>
 
-        <div class="tarjeta">
-            <h3>¿A quién va dirigido?</h3>
-            <p>Explica qué personas pueden contratar este servicio.</p>
-        </div>
+                <div class="campo">
+                    <label>Teléfono celular *</label>
 
-        <div class="tarjeta">
-            <h3>Información importante</h3>
-            <p>Agrega requisitos, condiciones y características adicionales.</p>
-        </div>
+                    <input
+                        type="tel"
+                        id="telefono"
+                        placeholder="10 dígitos"
+                        pattern="[0-9 +()-]{10,18}"
+                        required
+                    >
+                </div>
 
-    </div>
+                <div class="campo">
+                    <label>Correo electrónico *</label>
 
-    <div class="contacto">
-        <h3>¿Necesitas más información?</h3>
-        <p>Correo: contacto@empresa.com</p>
-        <p>Teléfono: (33) 0000 0000</p>
-        <p>Horario: Lunes a viernes de 9:00 a 18:00</p>
-    </div>
+                    <input
+                        type="email"
+                        id="correo"
+                        placeholder="nombre@correo.com"
+                        required
+                    >
+                </div>
 
-    <div class="acciones">
-        <button class="btn-principal" onclick="abrirFormulario(3)">
-            Llenar un formulario
-        </button>
+                <div class="campo">
+                    <label>Ciudad</label>
 
-        <button class="btn-secundario" onclick="volver()">
-            Volver
-        </button>
-    </div>
+                    <input
+                        type="text"
+                        id="ciudad"
+                        placeholder="Tu ciudad"
+                    >
+                </div>
 
-</section>
+                <div class="campo completo">
+                    <label>Comentarios adicionales</label>
 
-<!-- SEGURO 4 -->
-<section class="detalle" id="seguro4">
+                    <textarea
+                        id="mensaje"
+                        placeholder="Escribe tus dudas o comentarios..."
+                    ></textarea>
+                </div>
 
-    <span class="etiqueta">OPCIÓN 04</span>
-    <h2>Seguro 4</h2>
+            </div>
 
-    <p>
-        Aquí puedes agregar una descripción completa del Seguro 4.
-        Explica en qué consiste, cuáles son sus características
-        y qué beneficios ofrece a los clientes.
-    </p>
+            <label class="privacidad">
+                <input type="checkbox" id="aceptar" required>
 
-    <div class="informacion">
+                <span>
+                    Acepto el aviso de privacidad y autorizo
+                    que la empresa seleccionada utilice mis
+                    datos únicamente para dar seguimiento
+                    a esta solicitud.
+                </span>
+            </label>
 
-        <div class="tarjeta">
-            <h3>¿Qué ofrece?</h3>
-            <p>Describe las principales coberturas y beneficios del seguro.</p>
-        </div>
-
-        <div class="tarjeta">
-            <h3>¿A quién va dirigido?</h3>
-            <p>Explica qué personas pueden contratar este servicio.</p>
-        </div>
-
-        <div class="tarjeta">
-            <h3>Información importante</h3>
-            <p>Agrega requisitos, condiciones y características adicionales.</p>
-        </div>
-
-    </div>
-
-    <div class="contacto">
-        <h3>¿Necesitas más información?</h3>
-        <p>Correo: contacto@empresa.com</p>
-        <p>Teléfono: (33) 0000 0000</p>
-        <p>Horario: Lunes a viernes de 9:00 a 18:00</p>
-    </div>
-
-    <div class="acciones">
-        <button class="btn-principal" onclick="abrirFormulario(4)">
-            Llenar un formulario
-        </button>
-
-        <button class="btn-secundario" onclick="volver()">
-            Volver
-        </button>
-    </div>
-
-</section>
-
-<!-- FORMULARIO -->
-<section class="formulario" id="formulario">
-
-    <h2>Solicitar información</h2>
-    <p>Completa los siguientes datos para recibir atención.</p>
-
-    <form onsubmit="enviarFormulario(event)">
-
-        <div class="campo">
-            <label>Nombre completo</label>
-            <input type="text" placeholder="Escribe tu nombre" required>
-        </div>
-
-        <div class="campo">
-            <label>Correo electrónico</label>
-            <input type="email" placeholder="correo@ejemplo.com" required>
-        </div>
-
-        <div class="campo">
-            <label>Teléfono</label>
-            <input type="tel" placeholder="Tu número telefónico" required>
-        </div>
-
-        <div class="campo">
-            <label>Seguro de interés</label>
-            <select id="tipoSeguro" required>
-                <option value="">Selecciona un seguro</option>
-                <option>Seguro 1</option>
-                <option>Seguro 2</option>
-                <option>Seguro 3</option>
-                <option>Seguro 4</option>
-            </select>
-        </div>
-
-        <div class="campo completo">
-            <label>Mensaje</label>
-            <textarea placeholder="Escribe tu mensaje o consulta"></textarea>
-        </div>
-
-        <div class="campo completo">
-            <button class="btn-principal" type="submit">
-                Enviar solicitud
+            <button type="submit" class="boton">
+                ✉ Enviar solicitud
             </button>
 
-            <button class="btn-secundario" type="button" onclick="volver()">
-                Regresar
-            </button>
-        </div>
+            <div class="exito" id="mensajeExito">
+                ¡Solicitud registrada correctamente!
+                Gracias por tu interés. La empresa se pondrá
+                en contacto contigo.
+            </div>
 
-    </form>
+        </form>
+
+    </div>
 
 </section>
 
 </main>
 
-<footer>
-    <strong>PROTECCIÓN.</strong>
-    <p>Confianza, seguridad y respaldo para ti.</p>
+<!-- PIE DE PÁGINA -->
+
+<footer id="privacidad">
+
+    <p>
+        <a href="#privacidad"
+        onclick="alert('Aviso de privacidad de demostración. Los datos no se almacenan ni se envían a un servidor.')">
+            Aviso de privacidad
+        </a>
+
+        &nbsp; | &nbsp;
+
+        <a href="#privacidad"
+        onclick="alert('Términos y condiciones de demostración.')">
+            Términos y condiciones
+        </a>
+    </p>
+
+    <p style="margin-top:10px">
+        © 2026 Diagnósticos Profesionales.
+        Todos los derechos reservados.
+    </p>
+
+    <p style="opacity:.6;margin-top:5px">
+        Prototipo demostrativo
+    </p>
+
 </footer>
 
 <script>
 
-// OCULTAR TODAS LAS SECCIONES
-function ocultarSecciones() {
+// INFORMACIÓN DE LAS CUATRO EMPRESAS
 
-    document.querySelectorAll('.detalle').forEach(seccion => {
-        seccion.classList.remove('active');
+const empresas = {
+
+    lumina: {
+        nombre: "Lumina",
+        categoria: "Diagnóstico visual",
+        color: "#c69b36",
+
+        descripcion:
+        "Conoce el estado general de tus necesidades visuales y recibe orientación para cuidar mejor tu vista.",
+
+        sobre:
+        "Lumina ofrece una primera orientación para ayudarte a identificar necesidades relacionadas con tu salud visual y conocer posibles alternativas de atención.",
+
+        diagnostico:
+        "Descripción general de tus necesidades visuales, revisión inicial y orientación sobre los siguientes pasos que puedes considerar.",
+
+        incluye:
+        "Orientación inicial, explicación de resultados y recomendaciones generales de atención.",
+
+        beneficio:
+        "Recibe una orientación inicial para conocer mejor tus necesidades visuales.",
+
+        condiciones: [
+            "Sujeto a disponibilidad y confirmación de cita.",
+            "Una solicitud por persona.",
+            "La orientación no sustituye una consulta con un especialista de la salud visual."
+        ]
+    },
+
+    altamira: {
+        nombre: "Altamira",
+        categoria: "Diagnóstico patrimonial",
+        color: "#4c8b6c",
+
+        descripcion:
+        "Obtén una visión inicial de tu patrimonio y conoce opciones para tomar decisiones con mayor claridad.",
+
+        sobre:
+        "Altamira brinda orientación inicial para revisar los elementos generales de tu patrimonio, identificar prioridades y conocer alternativas para su organización.",
+
+        diagnostico:
+        "Revisión general de la situación patrimonial a partir de la información que decidas compartir con el equipo.",
+
+        incluye:
+        "Conversación de orientación, identificación de prioridades y explicación de posibles áreas de atención.",
+
+        beneficio:
+        "Conoce mejor tu situación patrimonial y recibe una guía inicial sobre posibles siguientes pasos.",
+
+        condiciones: [
+            "La orientación depende de la información proporcionada.",
+            "Una solicitud por persona.",
+            "No representa una asesoría legal, fiscal o de inversión definitiva."
+        ]
+    },
+
+    bluefin: {
+        nombre: "Bluefin",
+        categoria: "Diagnóstico financiero",
+        color: "#5486ba",
+
+        descripcion:
+        "Comprende mejor tu panorama financiero y descubre áreas en las que puedes trabajar para alcanzar tus objetivos.",
+
+        sobre:
+        "Bluefin busca ofrecer una primera revisión de tus objetivos y situación financiera para ayudarte a reconocer oportunidades de organización y mejora.",
+
+        diagnostico:
+        "Evaluación inicial de objetivos, hábitos y prioridades financieras con base en los datos que compartas.",
+
+        incluye:
+        "Orientación general, identificación de objetivos y sugerencias iniciales para organizar tus finanzas.",
+
+        beneficio:
+        "Obtén una perspectiva inicial de tus finanzas y de las áreas que podrías fortalecer.",
+
+        condiciones: [
+            "La información debe ser proporcionada de manera voluntaria.",
+            "Una solicitud por persona.",
+            "No constituye una oferta de crédito ni asesoría de inversión personalizada."
+        ]
+    },
+
+    sabore: {
+        nombre: "Saboré",
+        categoria: "Diagnóstico nutricional",
+        color: "#c7655d",
+
+        descripcion:
+        "Da el primer paso para conocer tus hábitos alimenticios y recibir orientación sobre bienestar y nutrición.",
+
+        sobre:
+        "Saboré ofrece orientación inicial para reconocer hábitos de alimentación y conocer opciones generales que pueden apoyar un estilo de vida equilibrado.",
+
+        diagnostico:
+        "Revisión inicial de hábitos y necesidades nutricionales a partir de la información que compartas.",
+
+        incluye:
+        "Orientación general, identificación de hábitos y recomendaciones iniciales para continuar tu proceso.",
+
+        beneficio:
+        "Conoce mejor tus hábitos y recibe una guía inicial para trabajar en tu bienestar.",
+
+        condiciones: [
+            "La orientación está sujeta a disponibilidad.",
+            "Una solicitud por persona.",
+            "No sustituye una consulta médica ni un plan nutricional individual realizado por un profesional."
+        ]
+    }
+
+};
+
+
+// MOSTRAR INFORMACIÓN DE UNA EMPRESA
+
+function mostrarDetalle(id) {
+
+    const empresa = empresas[id];
+
+    if (!empresa) return;
+
+    document.getElementById("inicio").style.display = "none";
+
+    const detalle = document.getElementById("detalle");
+
+    detalle.classList.add("activo");
+
+    document.getElementById("portadaDetalle").style.background =
+        `linear-gradient(120deg, #0b1d3a, ${empresa.color})`;
+
+    document.getElementById("categoriaDetalle").textContent =
+        empresa.categoria;
+
+    document.getElementById("nombreDetalle").textContent =
+        empresa.nombre;
+
+    document.getElementById("descripcionDetalle").textContent =
+        empresa.descripcion;
+
+    document.getElementById("sobreEmpresa").textContent =
+        empresa.sobre;
+
+    document.getElementById("diagnostico").textContent =
+        empresa.diagnostico;
+
+    document.getElementById("incluye").textContent =
+        empresa.incluye;
+
+    document.getElementById("beneficio").textContent =
+        empresa.beneficio;
+
+    const lista = document.getElementById("condiciones");
+
+    lista.innerHTML = "";
+
+    empresa.condiciones.forEach(condicion => {
+
+        const elemento = document.createElement("li");
+
+        elemento.textContent = condicion;
+
+        lista.appendChild(elemento);
+
     });
 
-    document.getElementById('formulario')
-        .classList.remove('active');
-}
+    document.getElementById("empresaSeleccionada").value =
+        empresa.nombre;
 
-// MOSTRAR EL SEGURO SELECCIONADO
-function mostrarSeguro(numero) {
+    document.getElementById("formulario").reset();
 
-    ocultarSecciones();
+    document.getElementById("empresaSeleccionada").value =
+        empresa.nombre;
 
-    const seccion = document.getElementById('seguro' + numero);
+    document.getElementById("mensajeExito").classList.remove("mostrar");
 
-    seccion.classList.add('active');
-
-    seccion.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
+
 }
 
-// ABRIR EL FORMULARIO
-function abrirFormulario(numero) {
 
-    ocultarSecciones();
+// REGRESAR AL INICIO
 
-    document.getElementById('tipoSeguro').value =
-        'Seguro ' + numero;
+function mostrarInicio() {
 
-    const formulario = document.getElementById('formulario');
+    document.getElementById("detalle").classList.remove("activo");
 
-    formulario.classList.add('active');
+    document.getElementById("inicio").style.display = "block";
 
-    formulario.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
+
 }
 
-// REGRESAR A LA PAGINA PRINCIPAL
-function volver() {
-
-    ocultarSecciones();
-
-    document.getElementById('inicio').scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-    });
-}
 
 // ENVIAR FORMULARIO
+
 function enviarFormulario(event) {
 
     event.preventDefault();
 
-    alert('Formulario completado. Para recibir las solicitudes, conecta el formulario a un servicio de envío.');
+    const nombre = document.getElementById("nombre").value;
+    const telefono = document.getElementById("telefono").value;
+    const correo = document.getElementById("correo").value;
+    const empresa = document.getElementById("empresaSeleccionada").value;
+
+    if (!nombre || !telefono || !correo) {
+        alert("Por favor, completa todos los campos obligatorios.");
+        return;
+    }
+
+    document.getElementById("mensajeExito").classList.add("mostrar");
+
+    document.getElementById("mensajeExito").scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+
+    console.log("Solicitud de demostración:", {
+        empresa: empresa,
+        nombre: nombre,
+        telefono: telefono,
+        correo: correo,
+        ciudad: document.getElementById("ciudad").value,
+        mensaje: document.getElementById("mensaje").value
+    });
 
 }
 
@@ -737,5 +1113,3 @@ function enviarFormulario(event) {
 
 </body>
 </html>
-
-
